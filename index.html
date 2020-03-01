@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/851bdfdb41.js" crossorigin="anonymous"></script>
+    <title>Random User Generator</title>
+</head>
+
+<body>
+    <header>
+        <div class="container text-center">
+            <h1>Random User Generator</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="card card--custom text-center mx-auto">
+            <div class="card-header">
+                <img src="" id="user-photo" class="card-img-top py-5" alt="User picture">
+            </div>
+            <div class="card-body p-5">
+                <h5 class=" card-title text-muted" id="user-title">Hi, My name is</h5>
+                <h3 class="card-text py-2" id="user-name">
+                    content.
+                </h3>
+
+                <!-- values-list -->
+                <ul id="values-list" class="d-flex justify-content-around pt-4 mx-auto">
+                    <li id="user" class="active" data-title="" data-value="" data-label="name"><i class="far fa-user">Item0</i></li>
+                    <li id="email"><i class="far fa-envelope">Item1</i></li>
+                    <li id="bday"><i class="far fa-calendar-alt">Item2</i></li>
+                    <li id="address"><i class="far fa-map">Item3</i></li>
+                    <li id="phoneNumber"><i class="fas fa-phone-volume">Item4</i></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
