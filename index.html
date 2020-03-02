@@ -25,17 +25,17 @@
             </div>
             <div class="card-body p-5">
                 <h5 class=" card-title text-muted" id="user-title">Hi, My name is</h5>
-                <h3 class="card-text py-2" id="user-name">
+                <h3 class="card-text py-4" id="user-name">
                     content.
                 </h3>
 
                 <!-- values-list -->
-                <ul id="values-list" class="d-flex justify-content-around pt-4 mx-auto">
-                    <li id="user" class="active" data-title="" data-value="" data-label="name"><i class="far fa-user">Item0</i></li>
-                    <li id="email"><i class="far fa-envelope">Item1</i></li>
-                    <li id="bday"><i class="far fa-calendar-alt">Item2</i></li>
-                    <li id="address"><i class="far fa-map">Item3</i></li>
-                    <li id="phoneNumber"><i class="fas fa-phone-volume">Item4</i></li>
+                <ul id="valuesList" class="list d-flex flex-wrap justify-content-around pt-4 mx-auto">
+                    <li id="person" onclick="toggleClass(this)"class="icon active"><i class="far fa-user"></i></li>
+                    <li id="email" onclick="toggleClass(this)"class="icon"><i class="far fa-envelope"></i></li>
+                    <li id="bday" onclick="toggleClass(this)"class="icon"><i class="far fa-calendar-alt"></i></li>
+                    <li id="address" onclick="toggleClass(this)"class="icon"><i class="far fa-map"></i></li>
+                    <li id="phoneNumber" onclick="toggleClass(this)"class="icon"><i class="fas fa-phone-volume"></i></li>
                 </ul>
             </div>
         </div>

@@ -1,7 +1,18 @@
 // api endpoint
-const url = 'https://randomuser.me/api/';
+const url = 'https://randomuser.me/api/?exc=login/';
 // DOM elements
-var user = document.getElementById('user').value;
+var person = document.getElementById('user');
+var email = document.getElementById('email');
+var title = document.getElementById('user-title');
+
+// set active class on click for icons
+function toggleClass(el) {
+    var lists = document.getElementById('valuesList').children;
+    for (var i = 0; i < lists.length; i++) {
+        lists[i].className = "";
+    }
+    el.className = "active";
+};
 
 fetch(url) // Call the fetch function passing the url of the API as a parameter
     .then((resp) => resp.json())
@@ -11,15 +22,46 @@ fetch(url) // Call the fetch function passing the url of the API as a parameter
         return users.map(function (user) { // Map through the results and for each run the code below
             let picture = document.getElementById('user-photo').src = user.picture.large;
             let userName = document.getElementById('user-name').innerHTML = user.name.first + " " + user.name.last;
-            
-            // locate your element and add the Click Event Listener
-            document.getElementById("values-list").addEventListener("click",function(e) {
-            // e.target is our targetted element.
-            console.log(user.name.first + " " + user.name.last);
-    });
-        })
+            let name = document.getElementById('user-name');
+            let bday = document.getElementById('bday');
 
-    })
+            // locate your element and add the Click Event Listener
+            document.getElementById("person").addEventListener("click",function(e) {
+            // person link info
+                title.innerHTML = "Hello, My name is";
+                name.innerHTML = user.name.first + " " + user.name.last;
+                console.log("person has been clicked")
+            });
+            // email link info
+            document.getElementById('email').addEventListener('click', function(e) {
+                title.innerHTML = "My email address is";
+                name.innerHTML = user.email;
+                console.log("email has been clicked")
+            });
+            // bday link info
+            document.getElementById('bday').addEventListener('click', function(e) {
+                title.innerHTML = "My birthday is";
+                let date = user.dob.date;
+                
+                name.innerHTML = date;
+                //name.innerHTML = user.dob.date;
+                console.log('birthday has been clicked');
+            });
+            // address link info
+            document.getElementById('address').addEventListener('click', function(e) {
+                console.log("address had been clicked");
+                title.innerHTML = "The city I live In";
+                name.innerHTML = user.location.city + ", " + user.location.state;
+            });
+            // phone link info
+            document.getElementById('phoneNumber').addEventListener('click', function(e) {
+                console.log("phone had been clicked");
+                title.innerHTML = "My phone number is";
+                name.innerHTML = user.phone;
+            });
+        }) // user.map
+    }) // .then function (data)
+
     .catch(function (error) {
         // This is where you run code if the server returns any errors
         console.log(error)

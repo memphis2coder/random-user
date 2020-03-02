@@ -33,11 +33,11 @@ header h1 {
 }
 
 /* values-list styles */
-#values-list {
+#valuesList {
     padding: 0;
 }
 
-#values-list li {
+#valuesList li {
     list-style-type: none;
     font-size: 25px;
     color: lightgrey;
@@ -49,21 +49,4 @@ header h1 {
   }
 
 
-
-/* #authors {
-    list-style-type: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 1em;
-    text-align: center;
-}
-
-#authors img {
-    border-radius: 50%;
-}
-
-#authors p {
-    color: lightcoral;
-    padding: .5em;
-} */
 
