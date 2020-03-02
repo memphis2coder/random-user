@@ -1,8 +1,8 @@
 // api endpoint
 const url = 'https://randomuser.me/api/?exc=login/';
 // DOM elements
-var person = document.getElementById('user');
-var email = document.getElementById('email');
+// var person = document.getElementById('user');
+// var email = document.getElementById('email');
 var title = document.getElementById('user-title');
 
 // set active class on click for icons
@@ -26,35 +26,34 @@ fetch(url) // Call the fetch function passing the url of the API as a parameter
             let bday = document.getElementById('bday');
 
             // locate your element and add the Click Event Listener
-            document.getElementById("person").addEventListener("click",function(e) {
+            document.getElementById("person").addEventListener("click",function() {
             // person link info
                 title.innerHTML = "Hello, My name is";
                 name.innerHTML = user.name.first + " " + user.name.last;
                 console.log("person has been clicked")
             });
             // email link info
-            document.getElementById('email').addEventListener('click', function(e) {
+            document.getElementById('email').addEventListener('click', function() {
                 title.innerHTML = "My email address is";
                 name.innerHTML = user.email;
                 console.log("email has been clicked")
             });
             // bday link info
-            document.getElementById('bday').addEventListener('click', function(e) {
+            document.getElementById('bday').addEventListener('click', function() {
                 title.innerHTML = "My birthday is";
                 let date = user.dob.date;
-                
-                name.innerHTML = date;
-                //name.innerHTML = user.dob.date;
+                let newDate = moment(date).format("M/DD/YYYY");
+                name.innerHTML = newDate;
                 console.log('birthday has been clicked');
             });
             // address link info
-            document.getElementById('address').addEventListener('click', function(e) {
+            document.getElementById('address').addEventListener('click', function() {
                 console.log("address had been clicked");
                 title.innerHTML = "The city I live In";
                 name.innerHTML = user.location.city + ", " + user.location.state;
             });
             // phone link info
-            document.getElementById('phoneNumber').addEventListener('click', function(e) {
+            document.getElementById('phoneNumber').addEventListener('click', function() {
                 console.log("phone had been clicked");
                 title.innerHTML = "My phone number is";
                 name.innerHTML = user.phone;
@@ -67,13 +66,6 @@ fetch(url) // Call the fetch function passing the url of the API as a parameter
         console.log(error)
     });
 
-
-// tasks
-// *) Add a click event
-// *) dyanmically replace user-title and user-name
-// *) update user-title
-// *) update user-name
-// *) update both when I hover over font-awesome icons
 
 
 
