@@ -67,5 +67,11 @@ fetch(url) // Call the fetch function passing the url of the API as a parameter
     });
 
 
+    // reset button to refresh page
+    function reload() {
+        location.reload(); 
+    };
+    
+
 
 
